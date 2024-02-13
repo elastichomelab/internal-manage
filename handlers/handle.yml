@@ -1,0 +1,25 @@
+---
+- name: Handle RHEL
+  debug:
+    msg: "RHEL detected"
+  when: os_type == "Red Hat Enterprise Linux"
+
+- name: Handle Fedora
+  debug:
+    msg: "Fedora detected"
+  when: os_type == "Fedora"
+
+- name: Handle Debian
+  debug:
+    msg: "Debian detected"
+  when: os_type == "Debian"
+
+- name: Handle Ubuntu
+  debug:
+    msg: "Ubuntu detected"
+  when: os_type == "Ubuntu"
+
+- name: Handle Oracle Linux
+  debug:
+    msg: "Oracle Linux detected"
+  when: os_type == "Oracle Linux"

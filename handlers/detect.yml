@@ -1,0 +1,16 @@
+---
+- name: Detect OS and trigger handler
+  hosts: your_target_hosts
+  tasks:
+    - name: Check OS and register result
+      command: cat /etc/os-release
+      register: os_release
+
+    - name: Set OS variable based on the content of /etc/os-release
+      set_fact:
+        os_type: "{{ os_release.stdout_lines | map('regex_replace', '^NAME=\"|\"$', '') | first }}"
+
+  handlers:
+    - name: Handle OS type
+      include_tasks: handle_os.yml
+      when: os_type is defined
