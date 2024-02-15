@@ -1,0 +1,11 @@
+dnf:
+  ad-join:
+    - "samba-common-tools"
+    - "realmd"
+    - "oddjob"
+    - "oddjob-mkhomedir"
+    - "sssd"
+    - "adcli"
+    - "krb5-workstation"
+
+  
